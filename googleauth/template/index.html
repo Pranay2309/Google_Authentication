@@ -1,0 +1,17 @@
+{% load socialaccount %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    {{ user.username }}
+    <a href="/logout">Sign Out</a>
+    {% else %}
+    <a href="{% provider_login_url 'google' %}">Login With Google</a>
+    
+    {% endif %}
+    
+</body>
+</html>
